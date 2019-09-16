@@ -1,0 +1,1 @@
+03 14 * * * /home/ubuntu/git/testdiscourse/pull-discourse.sh 1>>/home/ubuntu/git/testdiscourse/pull-discourse.log 2>&1
