@@ -12,8 +12,8 @@ import six
 from CanonicalDocUtils import __version__
 from CanonicalDocUtils.cli import md2json
 
-# build in some defaults?
-#snapc = 'https://forum.snapcraft.io/t/snap-documentation/11127'
+# Location of navigation Discourse post
+snapc = 'https://forum.snapcraft.io/t/snap-documentation/11127'
 
 def get_raw_url(url):
     r = url.split('/')
