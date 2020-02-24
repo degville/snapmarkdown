@@ -1,6 +1,6 @@
 A snap's confinement level is the degree of isolation it has from your system. There are three levels of snap confinement:
 - **Strict** 
-   Used by the majority of snaps. Strictly confined snaps run in complete isolation, and consequently, can not access your files, network, processes or any other system resource without requesting specific access via an interface ([see below](#interfaces)).
+   Used by the majority of snaps. Strictly confined snaps run in complete isolation, up to a minimal access level that's deemed always safe. Consequently, strictly confined snaps can not access your files, network, processes or any other system resource without requesting specific access via an interface ([see below](#interfaces)).
 - **Classic**
    Allows access to your system's resources in much the same way traditional packages do. To safeguard against abuse, publishing a classic snap requires [manual approval](/t/process-for-reviewing-classic-confinement-snaps/1460), and installation requires the `--classic` command line argument.
 - **Devmode**
@@ -38,8 +38,6 @@ An interface needs to be connected to be active, and connections are made either
 As with classic confinement, a snap's publisher can request an *assertion* to automatically connect an otherwise non-auto-connecting interface. For example, the *guvcview* snap [requested](https://forum.snapcraft.io/t/auto-connect-request-for-the-guvcview-brlin-snap/6042) the camera interface be automatically-connected when the snap is installed.
 
 If a snap is upgraded and includes a new assertion, the user will still need to connect the interface manually. Similarly, if an installed classic snap is upgraded to use strict confinement, its interfaces won't be automatically configured.
-
-> ⓘ Overriding a strictly confined snap with `--classic` is not recommended. This undoes the confinement and causes unpredictable behaviour. 
 
 You can see which interfaces are connected and disconnected with the `snap connections` command (`vlc:camera` is disconnected in the following example):
 

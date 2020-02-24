@@ -1,7 +1,7 @@
 After a snap has been [created](creating-a-snap.md), tested, and [released](releasing-your-app.md) to the [Snap Store](https://snapcraft.io/store), the Store's web interface can be used to perform the following functions:
 
 - [edit metadata](#metadata) to make a snap easily discoverable
-- [manage releases](/t/release-management/12442) and channels
+- [manage releases](release-management.md) and channels
 - [track installation](/t/snap-store-metrics/12556) and usage statistics
 
 To access the Snap Store, simply go to [https://snapcraft.io/store](https://snapcraft.io/store) and either [Create a developer account](/t/creating-your-developer-account/6760) or login with your developer account credentials.
@@ -66,14 +66,14 @@ The above image shows how a banner and banner icon (top right) are used by the S
 
 Each week, the Snap Advocacy team will choose an application as the No.1 featured Snap in the store. Only Snaps with a banner qualify for promotion in the top spot. Uploading a banner does not guarantee the application will be featured, but it helps and the No.1 Editor’s Pick will typically generate a significant volume of new users.
 
-The banner should be uploaded in the same place as other screenshots and must be named banner.png or banner.jpg.
-
 Banner requirements:
-- aspect ration: 3:100:
-- resolution: between 720 x 240 and 4320 x 1440
+- image formats: JPEG & PNG files
+- min resolution: 720 x 240 pixels
+  For best results on [the store](https://snapcraft.io/store) we recommend a resolution of 1920 x 640 pixels or greater
+- max resolution: 4320 x 1440 pixels
+- aspect ratio: 3:1
+- file size limit: 2MB
 
 Here’s an example banner:
 
-![image|650x127](upload://zCw9Ugeh5aAZjadanbSdNtbN9P2.jpg)
-
-An optional banner icon can be also uploaded in the same place as the screenshots and must be named `banner-icon.png` or `banner-icon.jpg`. If uploaded, the banner icon will be overlayed on the left side of the banner image.<br><hr><br><div class='footer'>For questions and comments see <a href='https://forum.snapcraft.io/t/using-the-snap-store/12379'>the forum topic</a>.
+![Snap-Featured3x|690x230](upload://lk4JQU56Z8Elgh0Qk0u9yNZD91B.jpeg)<br><hr><br><div class='footer'>For questions and comments see <a href='https://forum.snapcraft.io/t/using-the-snap-store/12379'>the forum topic</a>.

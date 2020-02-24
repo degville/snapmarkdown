@@ -1,6 +1,6 @@
 
 
-A snap is a bundle of your app and its dependencies that works without modification across many different Linux distributions. Snaps are discoverable and installable from the [Snap Store](https://snapcraft.io/store), an app store with an audience of millions.
+A snap is a bundle of an app and its dependencies that works without modification across many different Linux distributions. Snaps are discoverable and installable from the [Snap Store](https://snapcraft.io/store), an app store with an audience of millions.
 
 The following sections provide a basic overview of using snaps, from their installation to their management and manipulation.
 

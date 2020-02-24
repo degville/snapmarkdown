@@ -1,4 +1,4 @@
-Certain snaps, such as those providing a background service, expose  configuration options that can be examined and altered.
+Certain snaps, such as those providing a background service, expose  configuration options that can be viewed and changed.
 
 The commands for viewing and changing these configuration options are `snap get` and `snap set`.
 
@@ -7,17 +7,16 @@ For example, to see the configuration options exposed by an installed snap, ente
 ```bash
 $ sudo snap get nextcloud
 Key        Value
+mode       production
 nextcloud  {...}
 php        {...}
 ports      {...}
 private    {...}
 ```
 
-The `{...}` in the above output indicates further options beneath the current key name level.
+The `{...}` in the output indicates that there are further options beneath the current key name level.
 
-!!! Note:
-    If there are no configuration options, you will see `error: snap <snap
-    name> has no configuration`.
+
 
 To explore configuration options, append the key name to the *get* command:
 
@@ -32,14 +31,22 @@ Use the *set* command to change a configuration option:
 
 ```bash
 $ sudo snap set nextcloud ports.http=81
+$ sudo snap get nextcloud ports
+Key          Value
+ports.http   81
+ports.https  443
 ```
 
-Configuration options can be unset by passing their names to the *unset* command:
+To clear and return a value to its default state, use the *unset* command  (from _snapd 2.41+_):
 ```bash
 $ sudo snap unset nextcloud ports.http
+# sudo snap get nextcloud ports
+Key          Value
+ports.http   80
+ports.https  443
 ```
 
-Alternatively, adding an exclamation mark (`!`) to the end of an option name will also clear its value:
+Alternatively, adding an exclamation mark (`!`) to the end of an option name  also clears its value:
 ```bash
 $ sudo snap set nextcloud ports.http!
 ```
@@ -55,4 +62,4 @@ Similarly, if the configuration update process takes longer than a reasonable am
 
 
 
-> :information_source: For background details on how snap developers set configuration options, see [The configure hook](supported-snap-hooks.md#heading--the-configure-hook).<br><hr><br><div class='footer'>For questions and comments see <a href='https://forum.snapcraft.io/t/configuration-in-snaps/510'>the forum topic</a>.
+> :information_source: For background details on how snap developers set configuration options, see [Adding snap configuration](/t/adding-snap-configuration/15246) and [The configure hook](supported-snap-hooks.md#heading--the-configure-hook).<br><hr><br><div class='footer'>For questions and comments see <a href='https://forum.snapcraft.io/t/configuration-in-snaps/510'>the forum topic</a>.

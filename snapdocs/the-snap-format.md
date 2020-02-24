@@ -1,4 +1,4 @@
-> :information_source: This documents the format of the **built** snaps. See [The snapcraft format](the-snapcraft-format.md) for more information about the `snapcraft.yaml` file used to build these snaps. 
+> :information_source: This page documents the format of the **built** snaps. See [The snapcraft format](the-snapcraft-format.md) for more information about the `snapcraft.yaml` file used to build these snaps. 
 
 A snap is a *Squashfs* file carrying content alongside metadata to tell the system it should be manipulated. When installed, the Squashfs file for the snap is mounted read-only at the following location:
 
@@ -86,10 +86,32 @@ architectures:
 # will be assembled on top of.
 base: <name>
 
+
+# A list of features that must be supported by the core for 
+# the snap to install. For example, the following sets a requirement for
+# snapd2.38 or later:
+# assumes:
+# - snapd2.38
+assumes:
+    - <feature>
+
 # The epoch this release is intended for. For further details, see:
 # https://forum.snapcraft.iosnap-epochs.md
 # (snapd 2.38+)
 epoch: <value>
+
+# Additional usernames the snap may use. Currently, the only supported
+# value for <name> is 'snap_daemon'. For details, see:
+# https://forum.snapcraft.io/t/system-usernames/13386
+# (snapd 2.41+)
+system-usernames:
+  <name>: shared
+
+# Alternative form:
+# system-usernames:
+#   <name>:
+#     scope: shared
+
 
 # List of applications (commands, binaries, daemons) in the snap. 
 apps:
@@ -128,7 +150,7 @@ apps:
       daemon: simple | forking | oneshot | notify
 
       # Controls whether the daemon should be restarted during a snap refresh. Defaults to 'restart'.
-      refresh-mode:  skip-refresh | restart
+      refresh-mode:  endure | restart
 
       # Maps a daemon’s sockets to services and activates them.
      sockets:
@@ -139,7 +161,7 @@ apps:
      
       # Controls how the daemon should be stopped.  The given signal is sent to the main PID 
       # (when used without -all) or to all PIDs in the process group when the -all suffix is used.
-      stop-mode:  sigterm | sigterm-all | sighub | sighub-all | sigusr1 | sigusr1-all | sigusr2 | sigusr2-all
+      stop-mode:  sigterm | sigterm-all | sighup | sighup-all | sigusr1 | sigusr1-all | sigusr2 | sigusr2-all
 
       # Optional command to stop a daemon.
       stop-command: <command line>
@@ -257,7 +279,8 @@ Name=My Downloader
 Exec=http.get %U
 ```
 
-### Autostart desktop files
+<h3 id='heading--autostart'>Autostart desktop files<sup><a href='#heading--autostart'>⚓</a></sup></h3>
+
 
 An application may put a desktop file under `$SNAP_USER_DATA/.config/autostart` in order to be automatically started with the user's desktop session. The file is matched with a corresponding application based on the `autostart` property of an app inside `meta/snap.yaml`. For example:
 

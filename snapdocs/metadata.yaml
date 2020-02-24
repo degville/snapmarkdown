@@ -24,12 +24,18 @@ navigation:
   - location: configuration-in-snaps.md
     source: /t/configuration-in-snaps/510
     title: Configuration in snaps
+  - location: managing-updates.md
+    source: /t/managing-updates/7022
+    title: Managing updates
   - location: system-options.md
     source: /t/system-options/87
     title: System options
   - location: the-snap-directory.md
     source: /t/the-snap-directory/2817
     title: The /snap directory
+  - location: glossary.md
+    source: /t/glossary/14612
+    title: Glossary
   header: '### Using'
   title: Using
 - children:
@@ -45,6 +51,9 @@ navigation:
   - location: using-the-snap-store.md
     source: /t/using-the-snap-store/12379
     title: Using the Snap Store
+  - location: release-management.md
+    source: /t/release-management/12442
+    title: Release management
   - location: the-snapcraft-format.md
     source: /t/the-snapcraft-format/8337
     title: The snapcraft format
@@ -57,6 +66,9 @@ navigation:
   - location: supported-snap-hooks.md
     source: /t/supported-snap-hooks/3795
     title: Supported hooks
+  - location: snapcraft-extensions.md
+    source: /t/snapcraft-extensions/13486
+    title: Snapcraft extensions
   - location: snap-epochs.md
     source: /t/snap-epochs/10316
     title: Epochs
@@ -75,15 +87,9 @@ navigation:
   - location: tab-completion-for-snaps.md
     source: /t/tab-completion-for-snaps/2261
     title: Tab completion
-  - location: build-on-lxd.md
-    source: /t/build-on-lxd/4157
-    title: Building with LXD
-  - location: build-on-docker.md
-    source: /t/build-on-docker/4158
-    title: Building with Docker
-  - location: remote-reusable-parts.md
-    source: /t/remote-reusable-parts/4233
-    title: Building reusable parts
+  - location: build-options.md
+    source: /t/build-options/14250
+    title: Build options
   - location: the-snap-format.md
     source: /t/the-snap-format/698
     title: The snap format

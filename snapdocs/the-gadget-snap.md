@@ -20,7 +20,7 @@ Sample configuration files may be found in the reference gadget snaps.
 
 <a name="gadget.yaml"></a>
 
-## gadget.yaml
+<h2 id='heading--gadget.yaml'>gadget.yaml</h2>
 
 <!---
 Source: https://github.com/CanonicalLtd/ubuntu-image/blob/master/docs/gadget-yaml.rst
@@ -29,6 +29,8 @@ Source should probably be removed once this is completed.
 -->
 
 The `meta/gadget.yaml` file contains the basic metadata for gadget-specific functionality, including a detailed specification of which structure items composed an image. The latter is used both by snapd and by ubuntu-image when creating images for these devices.
+
+A gadget snap's boot assets can also be automatically updated when the snap is refreshed. See [Updating gadget boot assets](/t/updating-gadget-boot-assets/14117) for further details.
 
 The following specification defines what is supported in `gadget.yaml`:
 
@@ -99,10 +101,13 @@ volumes:
         #   mbr - Master Boot Record of the image.
         #   system-boot - Partition holding the boot assets.
         #   system-data - Partition holding the main operating system data.
+        #   system-boot-image - Partition holding kernel images for the Little Kernel bootloader.
+        #   system-boot-select - Partition holding state for snapd Little Kernel support.
         #
         # A structure with role:system-data must either have an implicit
         # file system label, or 'writable'.
-        role: mbr | system-boot | system-data
+        # A structure with role:system-boot-select must have 'snapbootsel' label.
+        role: mbr | system-boot | system-data | system-boot-image | system-boot-select
 
         # Type of structure. May be specified as a two-hex-digit MBR partition
         # type, a GPT partition type GUID, or both on hybrid schemas.  The
@@ -149,6 +154,16 @@ volumes:
               offset: <bytes> | <bytes/2^20>M | <bytes/2^30>G   # (optional)
               offset-write: (see respective item above)         # (optional)
               size: <bytes> | <bytes/2^20>M | <bytes/2^30>G     # (optional)
+
+        # Support automatic asset updates. (optional)
+        update:
+            # update only if new edition is higher than old edition.
+            edition: uint32
+            # This field takes a list of files to be preserved.
+            # No support for preserving inside images. 
+            # i.e. update will overwrite the whole image in this case.
+            preserve: 
+              - <filename>
 ```
 
 <a name="prepare-device"></a>

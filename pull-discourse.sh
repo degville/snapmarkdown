@@ -1,8 +1,7 @@
-
 #!/bin/bash
 
-export BASE=/home/graham/build/snapmarkdown
-export PYTHONPATH=/home/graham/canonical/build/snapd/canonical-doc-utils
+export BASE=/home/graham/canonical/build/snapd/snapmarkdown
+export PYTHONPATH=/home/graham/canonical/build/snapd/snapmarkdown
 
 date "+%Y-%m-%d@%H:%M:%S"
 

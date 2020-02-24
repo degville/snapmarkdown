@@ -47,7 +47,7 @@ slots:
 ```
 In the above output, you can see that both VLC and Spotify snaps are connected to the *Core* PulseAudio slot. *Core* and *system* are synonymous.
 
-## Manual connections
+<h2 id='heading--manual-connections'>Manual connections</h2>
 
 An interface may be automatically connected when the snap is installed, or manually connected at some point after installation.
 

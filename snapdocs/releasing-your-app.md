@@ -1,4 +1,4 @@
-After [creating a snap](creating-a-snap.md) a snap, you should upload it to the [Snap Store](https://snapcraft.io/store), from where it can reach a potential audience of millions. 
+After [creating a snap](creating-a-snap.md), you should upload it to the [Snap Store](https://snapcraft.io/store), from where it can reach a potential audience of millions. 
 
 You will need the following:
 - a free Snapcraft [developer account](/t/creating-your-developer-account/6760) account
@@ -37,4 +37,4 @@ Congratulations, your snap has now been released and is available on the Snap St
 
 
 
-See [Using the Snap Store](using-the-snap-store.md) for help with making the most of a snap's store entry, and [Release management](/t/release-management/12442) for controlling which revisions appear on which channels.<br><hr><br><div class='footer'>For questions and comments see <a href='https://forum.snapcraft.io/t/releasing-your-app/6795'>the forum topic</a>.
+See [Using the Snap Store](using-the-snap-store.md) for help with making the most of a snap's store entry, and [Release management](release-management.md) for controlling which revisions appear on which channels.<br><hr><br><div class='footer'>For questions and comments see <a href='https://forum.snapcraft.io/t/releasing-your-app/6795'>the forum topic</a>.

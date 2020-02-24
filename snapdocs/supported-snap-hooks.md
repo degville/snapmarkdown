@@ -1,4 +1,4 @@
-A hook is an executable that runs within a snap's confined environment when a certain action occurs.
+A hook is an executable file that runs within a snap's confined environment when a certain action occurs.
 
 Common examples of actions requiring hooks include:
 
@@ -11,8 +11,8 @@ Common examples of actions requiring hooks include:
 A hook is defined as an executable within a snap's `meta/hooks/` directory, and consequently, also within `snap/hooks/` when building with *snapcraft*.
 
 The filename of the executable is based on the name of the hook. If this file exists, *snapd* will execute the file when required by that hook's action.
- 
-> ⓘ **Default shell environment**: A hook script can only assume a POSIX-compliant shell environment for its execution. If your script needs a specific shell, such as *Bash* or *Zsh*, it needs to be explicitly declared within the script's *hashbang* header (`#!/bin/bash`, for example). Your snap also needs to ensure your chosen shell is available. 
+
+> ⓘ **Default shell environment**: A hook script can only assume a POSIX-compliant shell environment for its execution. If your script needs a specific shell, such as *Bash* or *Zsh*, it needs to be explicitly declared within the script's *hashbang* header (`#!/bin/bash`, for example). Your snap also needs to ensure your chosen shell is available.
 
 ## Accessing resources
 
@@ -31,16 +31,19 @@ hooks:
         plugs: [network]
 ```
 
-Hooks are called with no parameters. When a hook needs to request or modify information in within *snapd*,  they can do so via the *snapctl* tool, which is always available within a snap's environment. See `snapctl --help` and `snapctl <command> --help` for details on how to use the tool.
+Hooks are called with no parameters. When a hook needs to request or modify information in within *snapd*,  they can do so via the *snapctl* tool, which is always available within a snap's environment. See [Using the snapctl tool](/t/using-the-snapctl-tool/15002) for further details.
 
 A hook is executed as a single transaction, where a transaction object holds all the configuration changes for that hook. These changes are invisible to the running system until the hook completely finishes. This allows for changes to be rolled back or *unset* if errors occur during the execution of a hook.
 
 <h2 id='heading--the-configure-hook'>The configure hook<sup><a href='#heading--the-configure-hook'>⚓</a></sup></h2>
 
 The `configure` hook is called when the following actions happen:
+
 - initial snap installation
 - snap refresh
-- whenever the user runs `snap set` to change a configuration option
+- whenever the user runs `snap set|unset` to change a configuration option
+
+> ⓘ Note that this hook will *not* get called when the snap *itself* changes configuration options using `snapctl get|set|unset`.
 
 The hook should use `snapctl get` to retrieve configuration values from snapd. If the hook exits with a non-zero status code, the configuration will not be applied.
 
@@ -70,28 +73,9 @@ echo "username: $username" > $SNAP_DATA/options/credentials
 echo "password: $password" >> $SNAP_DATA/options/credentials
 ```
 
-The same hook can also modify the configuration of a snap within the context of the current transaction. This is accomplished using `snapctl set` and `snapctl unset`. 
+The same hook can also modify the configuration of a snap within the context of the current transaction. This is accomplished using `snapctl set` and `snapctl unset`. For more information see [Adding Snap configuration](/t/adding-snap-configuration/15246) and [Using the snapctl tool](/t/using-the-snapctl-tool/15002).
 
-For example, the following sets a value of `80` for *http*:
-
-```sh
-#!/bin/sh
-snapctl set ports.http=80
-```
-
-To unset a value, pass its name with `snapctl unset`, and more than one value can be passed at a time:
-
-```sh
-#!/bin/sh
-snapctl unset ports.http ports.https
-```
-
-For convenience, an option can also be negated by adding an exclamation mark (`!`) to the end of a value. For example, the following *unsets* `https`: 
-
-```sh
-#!/bin/sh
-snapctl set ports.http=80 ports.https!
-```
+> ⓘ Note that configuration options do not need to be defined anywhere. `snapctl set` and `snap set` will accept any (valid) option name.
 
 ## The install hook
 

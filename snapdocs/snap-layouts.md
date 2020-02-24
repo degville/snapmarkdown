@@ -45,11 +45,12 @@ layout:
 
 Layouts are defined as a key-value map, mapping from a `<target-path>` to a layout declaration. Each declaration may be one of the following:
 
-* `bind: <source-path>`: bind-mount a directory
+* `symlink: <source-path>`: create a symbolic link. This method is preferred because it is the cheapest; the other methods significantly increase the startup time of your application.
+* `bind: <source-path>`: bind-mount a directory.
 * `bind-file: <source-path>`: bind-mount a file
-* `symlink: <source-path>`: create a symbolic link
 * `type: tmpfs`: mount a private temporary in-memory filesystem
 
+> :warning: Layouts using `bind*` and `tmpfs` **significantly increase the startup time** of your snap. We recommend using `symlink` instead, because it has the least amount of overhead. Some applications, however, might treat symlinks differently than regular files or directories so you may need to use a bind mount in those cases.
 
  `<source-path>` must refer to either `$SNAP`, `$SNAP_DATA` or `$SNAP_USER_DATA`.
 

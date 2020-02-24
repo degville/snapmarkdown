@@ -4,10 +4,56 @@
 :white_check_mark: snapd 2.27 ([topic](https://forum.snapcraft.io/t/1993))
 -->
 
+## snapd 2.44
+
+:gear: Switch within tracks with risk-only channel specification ([old topic](https://forum.snapcraft.io/t/11769), [new topic](https://forum.snapcraft.io/t/14970))
+:gear: Support for default tracks ([topic](https://forum.snapcraft.io/t/14970))
+:white_check_mark: Plug/slot rules: plug-names/slot-names constraints ([topic](https://forum.snapcraft.io/t/plug-slot-rules-plug-names-slot-names-constraints/12439))
+:white_check_mark: `snap remove-user` support
+
+**Schedule**
+
+|  |  |  |
+| --- | --- | --- |
+| :white_medium_square: | _beta_ | Feb 21  | 
+| :white_medium_square:  | _candidate_ | Mar 09  |
+| :white_medium_square: | _stable_ | March 16 |
+
+## snapd 2.43
+:white_check_mark: snapctl is-connected plug|slot ([topic](/t/14144))
+:white_check_mark: Remodel: gadget support
+:white_check_mark: Plug/slot declaration rules: greedy plugs ([topic](/t/12438))
+:white_check_mark: `system-backup` interface ([PR](https://github.com/snapcore/snapd/pull/6436))
+:white_check_mark: Speedup seccomp backend setup ([PR](https://github.com/snapcore/snapd/pull/7821))
+
+
+**Schedule**
+
+|  |  |  |
+| --- | --- | --- |
+| :white_check_mark: | _beta_ | Nov 12th | 
+| :white_check_mark:  | _candidate_ |  Feb 13th |
+| :white_check_mark: | _stable_ | Feb 19th  |
+
 ## snapd 2.42
-:gear: Switch within tracks with risk-only channel specification ([topic](/t/11769))
+:white_check_mark: Little-Kernel bootloader support 
+:white_check_mark: Improve performance in lxd when snapfuse is used ([topic](/t/10747/6))
+:white_check_mark: Work with cgroup v2 only systems
+:white_check_mark: Improved icon-theme support ([topic](/t/10676))
+
+**Schedule**
+
+|  |  |  |
+| --- | --- | --- |
+| :white_check_mark: | _beta_ | Sep 18th | 
+| :white_check_mark:  | _candidate_ |  Oct 2st |
+| :white_check_mark: | _stable_ | Oct 10th  |
 
 
+
+## previous
+
+[details=Expand]
 
 ## snapd 2.41
 :white_check_mark: Daemon user support ([topic](https://forum.snapcraft.io/t/10624), [older topic](https://forum.snapcraft.io/t/1461))
@@ -21,8 +67,8 @@
 |  |  |  |
 | --- | --- | --- |
 | :white_check_mark: | _beta_ | Aug 22th | 
-| :white_check_mark:  | _candidate_ |  Sep 03th |
-| :white_check_mark: | _stable_ | Sep 09th  |
+| :white_check_mark:  | _candidate_ |  Sep 3th |
+| :white_check_mark: | _stable_ | Sep 9th  |
 
 
 ## snapd 2.40
@@ -35,13 +81,9 @@
 
 |  |  |  |
 | --- | --- | --- |
-| :white_check_mark: | _beta_ | July 02th | 
+| :white_check_mark: | _beta_ | July 2nd | 
 | :white_check_mark:  | _candidate_ |  July 17th |
 | :white_check_mark: | _stable_ | Aug 12th  |
-
-## previous
-
-[details=Expand]
 
 ## snapd 2.39
 :white_check_mark: Automatic snapshots on removal ([topic](https://forum.snapcraft.io/t/9468))
@@ -291,24 +333,18 @@ See release notes [topic](https://forum.snapcraft.io/t/1993) for details.
 [/details]
 
 ## upcoming
-:gear: auto-transition to snapd snap (via `snap set core experimental.snapd-snap=true`)
-:gear: USB hotplug 
+:white_medium_square: Improvements in `snap download` ([topic](https://forum.snapcraft.io/t/1422))
+:white_medium_square: Refresh App Awareness ([topic](https://forum.snapcraft.io/t//10736))
 :white_medium_square: Health checks ([topic](https://forum.snapcraft.io/t/10605))
-
 (other [upcoming](https://forum.snapcraft.io/tags/upcoming) topics)
 
 ## backlog
-:white_medium_square: Desktop theme support ([topic](https://forum.snapcraft.io/t/496))
-:white_medium_square: Interface for locking screen ([topic](https://forum.snapcraft.io/t/1972)) 
 :white_medium_square: Support for wayland sockets ([topic](https://forum.snapcraft.io/t/186))
 :white_medium_square: Report disk usage for snaps ([topic](https://forum.snapcraft.io/t/2372))
 :white_medium_square: Cache snap summary/etc from store ([topic](https://forum.snapcraft.io/t/2375))
 :white_medium_square: Repairs Phase 2 (emergency fixes) ([topic](https://forum.snapcraft.io/t/311))
-:white_medium_square: Verified developers ([topic](https://forum.snapcraft.io/t/verified-developers/2005))
 :white_medium_square: Allow snaps to refresh themselves ([topic](https://forum.snapcraft.io/t/2275))  
 :white_medium_square: Configuration schemas
-:white_medium_square: Refresh postponing hook ([topic](https://forum.snapcraft.io/t/1085))
-:white_medium_square: Improvements in _snap download_ ([topic](https://forum.snapcraft.io/t/1422))
 :white_medium_square: Entitlements
 :white_medium_square: Alias in service units ([topic](https://forum.snapcraft.io/t/794))
 :white_medium_square: Replace a snap by another

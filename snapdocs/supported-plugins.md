@@ -2,30 +2,29 @@ The following plugins are currently supported by Snapcraft. See [Snapcraft plugi
 
 ## Programming languages
 
-### Go
+<h3 id='heading--go'>Go</h3>
 
 | Plugin name | Description |
 |--|--|
 | [go](/t/the-go-plugin/8505) | integrates projects written in Go and using the *go get* package installer  |
 | [godeps](/t/the-godeps-plugin/8506) | integrates projects written in Go and using the *godep* dependency tool |
 
-### Java
+<h3 id='heading--java'>Java</h3>
 
 | Plugin name | Description |
 |--|--|
 | [ant](/t/the-ant-plugin/8507) | Ant build system integration, commonly used by Java projects |
-| [jdk](/t/the-jdk-plugin/8508) |  integrate projects written using the Java Development Kit (JDK) |
 | [gradle](/t/the-gradle-plugin/5390) | integrate projects built using the Gradle build tool with your snaps |
 | [maven](/t/the-maven-plugin/4282) | build system integration with *Maven*, commonly used by Java projects  |
 
-### Node.js / JavaScript
+<h3 id='heading--javascript'>Node.js/JavaScript</h3>
 
 | Plugin name | Description |
 |--|--|
 | [gulp](/t/the-gulp-plugin/8511) |  build parts from projects using the gulp.js streaming build system |
 | [nodejs](/t/the-nodejs-plugin/8514) | create parts that use Node.js and/or the JavaScript package manager, npm |
 
-### Python
+<h3 id='heading--python'>Python</h3>
 
 | Plugin name | Description |
 |--|--|
@@ -34,7 +33,7 @@ The following plugins are currently supported by Snapcraft. See [Snapcraft plugi
 | python2 | (deprecated in favour of the [python](/t/the-python-plugin/8529) plugin) |
 | python3 |  (deprecated in favour of the [python](/t/the-python-plugin/8529) plugin)   |
 
-### Other languages
+<h3 id='heading--other'>Other languages</h3>
 
 | Plugin name | Description |
 |--|--|
@@ -43,7 +42,7 @@ The following plugins are currently supported by Snapcraft. See [Snapcraft plugi
 | [ruby](/t/the-ruby-plugin/8587) | built parts from projects written in Ruby and its Gemfile dependency bundler |
 | [rust](/t/the-rust-plugin/8588) | build parts from projects written in Rust and using Cargo for dependency management  |
 
-## Build tools
+<h2 id='heading--build-tools'>Build tools</h2>
 
 | Plugin name | Description |
 |--|--|

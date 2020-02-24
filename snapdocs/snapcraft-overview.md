@@ -16,15 +16,17 @@ Snapcraft can also be installed and run on Apple's macOS. See [Install snapcraft
 
 See below for a general overview of Snapcraft's capabilities, and see [Creating a snap](creating-a-snap.md) for a more detailed look at the process, alongside a selection of self-contained examples for some popular languages and frameworks, including [Go](/t/go-applications/7818), [Python](/t/python-apps/6741) and [C/C++](/t/c-c-applications/7817).
 
+> :information_source: If you're using an **apt** installed version of snapcraft, such as the package for [Ubuntu 18.04 LTS](http://releases.ubuntu.com/18.04/), you need to remove this (`sudo apt remove snapcraft`) and install snapcraft from its snap to access the latest features.
+
 ## Working with snapcraft
 
 At the heart of the snapcraft build process is a file called [snapcraft.yaml](the-snapcraft-format.md). This file describes a snap's build dependencies and run-time requirements, it integrates remote repositories and extensions, and runs custom scripts and hooks for better integration with CI systems.
 
-[Snapcraft 3.0](/t/snapcraft-release-notes/10721), and later releases, are designed to use *bases* (see [Base snaps](/t/base-snaps/11198)) and [Multipass](https://multipass.run/) to both simplify the build process and to to confine the build environment within a virtual machine. Confining the build in this way isolates potentially conflicting libraries and other files from your host system, and vice-versa.
+[Snapcraft 3.0](/t/snapcraft-release-notes/10721), and later releases, are designed to use *bases* (see [Base snaps](/t/base-snaps/11198)) and [Multipass](https://multipass.run/) to both simplify the build process and to confine the build environment within a virtual machine. Confining the build in this way isolates potentially conflicting libraries and other files from your host system, and vice-versa.
 
-Alternatively, if it better suits your processes, building directly on your system, or with either [LXD](build-on-lxd.md) or [Docker](build-on-docker.md), is also supported.
+However, Snapcraft offers a variety of options alongside Multipass, such as building within an ephemeral environment or with LXD. See [Build options](build-options.md) for further details.
 
-## Creating snapcraft.yaml
+<h3 id='heading--creating-snapcraft'>Creating snapcraft.yaml</h3>
 
 To get started, run `snapcraft init`. This creates a buildable snapcraft.yaml template within a snap sub-directory relative to your current filesystem location. If the command cannot be found, make sure `/snap/bin` is on your PATH.
 
@@ -42,9 +44,9 @@ The following lists how you might want to approach building a new snap for your 
     - set build dependencies, if required, and any run-time dependencies
  1. add [interface metadata](/t/snapcraft-app-and-service-metadata/8335) to connect external system resources to your application
 
-## Building your snap
+<h2 id='heading--building-your-snap'>Building your snap</h2>
 
-When you are ready to test the contents of snapcraft.yaml, simply run `snapcraft --debug` in the same directory where you initialised the snap,
+When you are ready to test the contents of snapcraft.yaml, simply run `snapcraft --debug` in the same directory where you initialised the snap.
 
 The `--debug` argument isn't necessary, but it helps hugely when testing a new snapcraft.yaml. 
 
@@ -52,7 +54,7 @@ With `--debug`, if snapcraft encounters an error it will automatically open a sh
 
 Critically, you can update snapcraft.yaml *outside* of the build environment and run `snapcraft` *within* the build environment to incorporate any external changes and continue with the build. If there are no further errors, your snap will be built.
 
->  ⓘ  See [Debugging building snaps](/t/debugging-building-snaps/6274) for common problems and their solutions.
+>  :information_source:  See [Debugging building snaps](/t/debugging-building-snaps/6274) for common problems and their solutions.
 
 To see snapcraft build the template created by *snapcraft init*, simply run `snapcraft --debug`:
 
@@ -67,9 +69,9 @@ Priming my-part
 Snapping 'my-snap-name' |
 Snapped my-snap-name_0.1_amd64.snap
 ```
-If you don't have Multipass installed, *snapcraft* will first prompt for its automatic installation via a snap.
+If you don't have Multipass installed, *snapcraft* will first prompt for its automatic installation via a snap. If you can't use Multipass, see [Build options](build-options.md) for alternatives.
 
-The build process will proceed through the [Snapcraft lifecycle](/t/snapcraft-lifecycle/5123), installing and building your project's dependencies, as described by your snapcraft.yaml. The time this takes will depend on the complexity of your project and the capabilities of your system.
+The build process will proceed through the [Snapcraft lifecycle](/t/parts-lifecycle/12231), installing and building your project's dependencies, as described by your snapcraft.yaml. The time this takes will depend on the complexity of your project and the capabilities of your system.
 
 After a snap has been built, it can be installed locally with the `--dangerous` and `--devmode` flags, enabling your unsigned and unconfined snap to be installed:
 

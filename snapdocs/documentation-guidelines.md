@@ -1,4 +1,4 @@
-Our documentation is a community effort, [published](https://docs.snapcraft.io) via the [DIscourse](https://www.discourse.org/) forum hosted at [forum.snapcraft.io](https://forum.snapcraft.io). We warmly welcome community contributions, suggestions, fixes and constructive criticism.
+Our documentation is a community effort, [published](https://docs.snapcraft.io) via the [DIscourse](https://www.discourse.org/) forum hosted at [forum.snapcraft.io](https://forum.snapcraft.io). We warmly welcome community contributions, suggestions, fixes and constructive feedback.
 
 Our [Documentation roadmap](/t/the-docs-roadmap/8763) outlines both our short-term and long-term goals for Snap-related documentation.
 

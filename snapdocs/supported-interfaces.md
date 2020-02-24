@@ -1,4 +1,6 @@
-Interfaces enable resources from one snap to be shared with another. For general usage details, see [Interface management](interface-management.md).
+Interfaces enable resources from one snap to be shared with another and with the system. For a snap to use an interface, its developer needs to have first defined its corresponding plugs and slots within a snap's [snapcraft.yaml](/t/creating-snapcraft-yaml/11666) file.
+
+For details on how to add an interface to your own snap, see [Snapcraft interfaces](/t/snapcraft-interfaces/13123). For general usage details, see [Interface management](interface-management.md).
 
 The table below lists currently supported interfaces, with links to further details for each interface.
 
@@ -6,8 +8,7 @@ The following column names are used:
 
 - *Interface name* is the syntactical interface name, as used by snaps.  
 
-- *Auto-connect* indicates that the interface will be connected by default when the snap is first 
-installed, requiring no further user action.
+- *Auto-connect* indicates that the interface will be connected by default when the snap is first installed, requiring no further user action. If `Auto-connect=no`, an interface can still be automatically connected if the snap developer has requested, and been granted, explicit permission. See [Permission requests](permission-requests.md) for details.
 
 - *Transitional interfaces* are used by trusted snaps to access traditional Linux desktop environments that were not designed to integrate with snap isolation. As such, they will become deprecated as replacement or modified technologies that enforce strong application isolation become available.
 
@@ -18,7 +19,7 @@ installed, requiring no further user action.
 | [adb-support](/t/the-adb-support-interface/9720) | allows operating as Android Debug Bridge service | no |
 | [alsa](/t/the-alsa-interface/7766) | play or record sound | no |
 | [appstream-metadata](/t/the-appstream-metadata-interface/13050) | allows access to AppStream metadata | no |
-| [audio-playback](/t/the-audio-playback-interface/13089) |  allows audio playback via supporting services | no |
+| [audio-playback](/t/the-audio-playback-interface/13089) |  allows audio playback via supporting services | yes |
 | [audio-record](/t/the-audio-record-interface/13090) | allows audio recording via supported services | no |
 | [autopilot-introspection](/t/the-autopilot-introspection-interface/7768) | be controlled by Autopilot software | no |
 | [avahi-control](/t/the-avahi-control-interface/7769) | advertise services over the local network | no |
@@ -78,11 +79,12 @@ installed, requiring no further user action.
 | [kernel-module-observe](/t/the-kernel-module-observe-interface/9719) | query kernel modules | no |
 | [kubernetes-support](/t/the-kubernetes-support-interface/7855) | use functions essential for Kubernetes | no |
 | [kvm](/t/the-kvm-interface/7856) | allows access to the kvm device  | no |
-| [login-session-control](/t/the-login-session-control-interface/13094) | allows setup of login sessions and grants privileged access to user sessions | no |
 | [libvirt](/t/the-libvirt-interface/7858) | provides access to the libvirt service | no |
 | [locale-control](/t/the-locale-control-interface/7859) | change system language and region settings | no |
 | [location-control](/t/the-location-control-interface/7860) | allows operating as the location service | no |
 | [location-observe](/t/the-location-observe-interface/7861) | access your location | no |
+| [login-session-control](/t/the-login-session-control-interface/13094) | allows setup of login sessions and grants privileged access to user sessions | no |
+| [login-session-observe](/t/the-login-session-observe-interface/14580) | allows reading login and session information | no |
 | [log-observe](/t/the-log-observe-interface/7862) | read system logs | no |
 | [lxd](/t/the-lxd-interface/7863) | provides access to the LXD socket | no |
 | [lxd-support](/t/the-lxd-support-interface/7864) | allows operating as the LXD service | no |
@@ -91,8 +93,8 @@ installed, requiring no further user action.
 | [mir](/t/the-mir-interface/7874) | enables access to the Mir display service | yes |
 | [modem-manager](/t/the-modem-manager-interface/7875) | use and configure modems | no |
 | [mount-observe](/t/the-mount-observe-interface/7876) | read mount table and quota information  | no |
-| [multipass-support](/t/the-multipass-support-interface/13095) | multipass-support allows operating as the Multipass service | no |
 | [mpris](/t/the-mpris-interface/7877) | control music and video players | no |
+| [multipass-support](/t/the-multipass-support-interface/13095) | multipass-support allows operating as the Multipass service | no |
 | [netlink-audit](/t/the-netlink-audit-interface/7878) | allows access to kernel audit system through Netlink | no |
 | [netlink-connector](/t/the-netlink-connector-interface/7879) | communicate through the kernel Netlink connector | no |
 | [network](/t/the-network-interface/7880) | enables network access | yes |
@@ -117,8 +119,9 @@ installed, requiring no further user action.
 | [physical-memory-observe](/t/the-physical-memory-observe-interface/7901) | read memory used by any process | no |
 | [ppp](/t/the-ppp-interface/7902) | access to configure and observe PPP networking | no |
 | [process-control](/t/the-process-control-interface/7903) | pause or end any process on the system | no |
-| [pulseaudio](/t/the-pulseaudio-interface/7906) | play and record sound | yes |
+| [pulseaudio](/t/the-pulseaudio-interface/7906) | play and record sound | no |
 | [raw-usb](/t/the-raw-usb-interface/7908) | access USB hardware directly | no |
+| [raw-volume](/t/the-raw-volume-interface/14578) | access specific disk partitions | no |
 | [removable-media](/t/the-removable-media-interface/7910) | read/write files on removable storage devices | no |
 | [screencast-legacy](/t/the-screencast-legacy-interface/13097) | allows screen recording and audio recording alongside writing to arbitrary filesystem paths | no |
 | [screen-inhibit-control](/t/the-screen-inhibit-control-interface/7911) | prevent screen sleep, lock and screensaver | yes |
@@ -129,6 +132,7 @@ installed, requiring no further user action.
 | [ssh-keys](/t/the-ssh-keys-interface/7917) | access SSH private and public keys | no |
 | [ssh-public-keys](/t/the-ssh-public-keys-interface/7918) | access SSH public keys | no |
 | [storage-framework-service](/t/the-storage-framework-service-interface/7919) | operate as, or interact with, the Storage Framework | no |
+| [system-backup](/t/the-system-backup-interface/14348) | read-only access to the system for backups | no |
 | [system-files](/t/the-system-files-interface/9358) | read or write files in the system | no |
 | [system-observe](/t/the-system-observe-interface/7921) | read process and system information | no |
 | [system-trace](/t/the-system-trace-interface/7922) | monitor or control any running program | no |

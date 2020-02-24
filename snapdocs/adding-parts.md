@@ -1,6 +1,4 @@
-
-
-When building a snap with [Snapcraft](snapcraft-overview.md), parts are used to describe your application, where its various components can be found, its build and run-time requirements, and those of its dependencies.
+When building a snap with [Snapcraft](snapcraft-overview.md), parts are used to describe your application, where its various components can be found, its build and run-time requirements, and those of its dependencies. Consequently, a snap always has one or more parts.
 
 A part's definition within [snapcraft.yaml](the-snapcraft-format.md) is purposely flexible to allow for varied and disparate sources. 
 
