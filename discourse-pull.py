@@ -9,7 +9,7 @@ import requests
 import time
 import textwrap
 import six
-import md2json
+import 'md2json'
 
 __version__='testing'
 
