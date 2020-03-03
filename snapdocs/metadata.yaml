@@ -1,112 +1,145 @@
 navigation:
-- children:
+- title: Using
+  children:
   - location: getting-started.md
     source: /t/getting-started/3876
-    title: Getting started
-  - location: channels.md
-    source: /t/channels/551
-    title: Channels
-  - location: commands-and-aliases.md
-    source: /t/commands-and-aliases/3950
-    title: Commands and aliases
-  - location: snap-confinement.md
-    source: /t/snap-confinement/6233
-    title: Snap confinement
-  - location: service-management.md
-    source: /t/service-management/3965
-    title: Service management
-  - location: interface-management.md
-    source: /t/interface-management/6154
-    title: Interface management
-  - location: snapshots.md
-    source: /t/snapshots/9468
-    title: Data snapshots
-  - location: configuration-in-snaps.md
-    source: /t/configuration-in-snaps/510
-    title: Configuration in snaps
-  - location: managing-updates.md
-    source: /t/managing-updates/7022
-    title: Managing updates
-  - location: system-options.md
-    source: /t/system-options/87
-    title: System options
-  - location: the-snap-directory.md
-    source: /t/the-snap-directory/2817
-    title: The /snap directory
-  - location: glossary.md
-    source: /t/glossary/14612
-    title: Glossary
-  header: '### Using'
-  title: Using
-- children:
+    title: Get started
+  - title: Working with snaps
+    children:
+          - location: channels.md
+            source: /t/channels/551
+            title: Installing snap
+          - location: channels.md
+            source: /t/channels/551
+            title: Release channels
+          - location: snap-confinement.md
+            source: /t/snap-confinement/6233
+            title: Snap confinement
+          - location: interface-management.md
+            source: /t/interface-management/6154
+            title: Interface management
+          - location: managing-updates.md
+            source: /t/managing-updates/7022
+            title: Managing updates
+          - location: commands-and-aliases.md
+            source: /t/commands-and-aliases/3950
+            title: Commands and aliases
+          - location: service-management.md
+            source: /t/service-management/3965
+            title: Service management
+          - location: snapshots.md
+            source: /t/snapshots/9468
+            title: Manage data snapshots
+          - location: configuration-in-snaps.md
+            source: /t/configuration-in-snaps/510
+            title: Configuration in snaps
+          - location: system-options.md
+            source: /t/system-options/87
+            title: System options
+- title: Building
+  children:
   - location: snapcraft-overview.md
     source: /t/snapcraft-overview/8940
     title: Snapcraft overview
   - location: creating-a-snap.md
     source: /t/creating-a-snap/6799
-    title: Creating a snap
+    title: Create a snap
+    children:
+         - title: Quickstart guides
+           location: creating-a-snap.md
+           source: /t/creating-a-snap/6799
+         - title: Process checklist 
+           location: creating-a-snap.md
+           source: /t/creating-a-snap/6799
+         - title: Start snapcraft.yaml
+           location: creating-a-snap.md
+           source: /t/creating-a-snap/6799
+         - title: Global metadata
+           location: creating-a-snap.md
+           source: /t/creating-a-snap/6799
+         - title: Choose a base
+           location: creating-a-snap.md
+           source: /t/creating-a-snap/6799
+         - title: Add parts
+           location: creating-a-snap.md
+           source: /t/creating-a-snap/6799
+         - title: Expose a command
+           location: creating-a-snap.md
+           source: /t/creating-a-snap/6799
+         - title: Add interfaces
+           location: creating-a-snap.md
+           source: /t/creating-a-snap/6799
+         - title: Iterating over a build
+           location: creating-a-snap.md
+           source: /t/creating-a-snap/6799
   - location: releasing-your-app.md
     source: /t/releasing-your-app/6795
-    title: Releasing your snap
-  - location: using-the-snap-store.md
-    source: /t/using-the-snap-store/12379
-    title: Using the Snap Store
-  - location: release-management.md
-    source: /t/release-management/12442
-    title: Release management
-  - location: the-snapcraft-format.md
-    source: /t/the-snapcraft-format/8337
-    title: The snapcraft format
-  - location: adding-parts.md
-    source: /t/adding-parts/11473
-    title: Adding parts
-  - location: supported-interfaces.md
-    source: /t/supported-interfaces/7744
-    title: Supported interfaces
-  - location: supported-snap-hooks.md
-    source: /t/supported-snap-hooks/3795
-    title: Supported hooks
-  - location: snapcraft-extensions.md
-    source: /t/snapcraft-extensions/13486
-    title: Snapcraft extensions
-  - location: snap-epochs.md
-    source: /t/snap-epochs/10316
-    title: Epochs
-  - location: snap-layouts.md
-    source: /t/snap-layouts/7207
-    title: Layouts
-  - location: snapcraft-plugins.md
-    source: /t/snapcraft-plugins/4284
-    title: Snapcraft plugins
-  - location: supported-plugins.md
-    source: /t/supported-plugins/8080
-    title: Supported plugins
-  - location: permission-requests.md
-    source: /t/permission-requests/12822
-    title: Permission requests
-  - location: tab-completion-for-snaps.md
-    source: /t/tab-completion-for-snaps/2261
-    title: Tab completion
-  - location: build-options.md
-    source: /t/build-options/14250
-    title: Build options
-  - location: the-snap-format.md
-    source: /t/the-snap-format/698
-    title: The snap format
-  - location: the-gadget-snap.md
-    source: /t/the-gadget-snap/696
-    title: The gadget snap
-  - location: the-kernel-snap.md
-    source: /t/the-kernel-snap/697
-    title: The kernel snap
-  header: '### Publishing'
-  title: Publishing
-- children:
-  - location: the-snapd-roadmap.md
-    source: /t/the-snapd-roadmap/1973
-    title: Roadmap
-  - location: documentation-guidelines.md
-    source: /t/documentation-guidelines/3798
-    title: Documentation guidelines
-  header: '### Developing'
-  title: Developing
+    title: Publish and share
+    children:
+          - title: Release your snap
+            location: creating-a-snap.md
+            source: /t/creating-a-snap/6799
+          - title: Using the Snap Store
+            location: creating-a-snap.md
+            source: /t/creating-a-snap/6799
+          - title: Release management
+            location: creating-a-snap.md
+            source: /t/creating-a-snap/6799
+          - title: Download metrics
+            location: creating-a-snap.md
+            source: /t/creating-a-snap/6799
+          - location: snap-epochs.md
+            source: /t/snap-epochs/10316
+            title: Control data with epochs
+          - location: snap-layouts.md
+            source: /t/snap-layouts/7207
+            title: Map files with layouts
+          - location: permission-requests.md
+            source: /t/permission-requests/12822
+            title: Permission requests
+          - location: tab-completion-for-snaps.md
+            source: /t/tab-completion-for-snaps/2261
+            title: Tab completion
+          - location: build-options.md
+            source: /t/build-options/14250
+            title: Build options
+
+- title: Reference
+  children:
+  - location: glossary.md
+    source: /t/glossary/14612
+    title: Glossary
+  - title: Snap
+    children:
+      - location: the-snapcraft-format.md
+        source: /t/the-snapcraft-format/8337
+        title: Environment variables
+      - location: the-snap-format.md
+        source: /t/the-snap-format/698
+        title: The snap format
+      - location: supported-snap-hooks.md
+        source: /t/supported-snap-hooks/3795
+        title: Supported hooks
+      - location: the-gadget-snap.md
+        source: /t/the-gadget-snap/696
+        title: The gadget snap
+      - location: the-kernel-snap.md
+        source: /t/the-kernel-snap/697
+        title: The kernel snap
+      - location: the-snap-directory.md
+        source: /t/the-snap-directory/2817
+        title: The /snap directory     
+  - title: Snapcraft
+    children:
+      - location: the-snapcraft-format.md
+        source: /t/the-snapcraft-format/8337
+        title: The snapcraft format
+      - location: supported-interfaces.md
+        source: /t/supported-interfaces/7744
+        title: Supported interfaces
+      - location: snapcraft-plugins.md
+        source: /t/snapcraft-plugins/4284
+        title: Snapcraft plugins
+      - location: snapcraft-extensions.md
+        source: /t/snapcraft-extensions/13486
+        title: Snapcraft extensions
