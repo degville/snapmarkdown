@@ -9,7 +9,7 @@ import requests
 import time
 import textwrap
 import six
-import 'md2json'
+import md2json
 
 __version__='testing'
 
@@ -17,8 +17,9 @@ __version__='testing'
 snapc = 'https://forum.snapcraft.io/t/snap-documentation/11127'
 
 def get_raw_url(url):
-    r = url.split('/')
-    r = r[0]+'//'+r[2]+'/raw/'+r[-1]
+    if url is not None:
+        r = url.split('/')
+        r = r[0]+'//'+r[2]+'/raw/'+r[-1]
     return(r)  
   
   
